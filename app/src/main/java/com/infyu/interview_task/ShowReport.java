@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,9 +31,10 @@ public class ShowReport extends AppCompatActivity {
         setContentView(R.layout.activity_show_report);
         context = this;
         init();
-        sharedPreferences = getSharedPreferences("result", 0);
-        arrayList = new ArrayList<>();
+
         try {
+            sharedPreferences = getSharedPreferences("result", 0);
+            arrayList = new ArrayList<>();
             JSONArray jsonArray = new JSONArray(sharedPreferences.getString("report", ""));
             for (int i = 0; i < jsonArray.length(); i++) {
                 ReportBean reportBean = new ReportBean();
@@ -45,8 +47,9 @@ public class ShowReport extends AppCompatActivity {
             ReportAdapter reportAdapter = new ReportAdapter(context, arrayList);
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
             recyclerView.setAdapter(reportAdapter);
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "No report found", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
         }
     }
 

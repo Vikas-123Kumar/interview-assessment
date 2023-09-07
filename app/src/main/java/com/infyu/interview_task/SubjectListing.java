@@ -6,10 +6,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -326,7 +328,12 @@ public class SubjectListing extends AppCompatActivity {
         show_report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), ShowReport.class));
+                SharedPreferences sharedPreferences = getSharedPreferences("result", 0);
+                if (sharedPreferences != null) {
+                    startActivity(new Intent(getApplicationContext(), ShowReport.class));
+                } else {
+                    Toast.makeText(getApplicationContext(), "No report exist", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

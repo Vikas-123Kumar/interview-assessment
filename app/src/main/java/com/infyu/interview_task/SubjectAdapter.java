@@ -2,6 +2,7 @@ package com.infyu.interview_task;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,7 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.MyViewho
     @Override
     public void onBindViewHolder(@NonNull MyViewholder holder, int position) {
         holder.name.setText(arrayList.get(position).getName());
+        holder.name.setTextColor(Color.parseColor(arrayList.get(position).getColor()));
         Picasso.with(context).load(arrayList.get(position).getIconUrl()).into(holder.icon);
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
