@@ -419,15 +419,13 @@ public class QuestionActivity extends AppCompatActivity {
                         optionLayout1.setBackground(getResources().getDrawable(R.drawable.blue_background));
                     } else if (selectAnswer.equals("B")) {
                         optionLayout2.setBackground(getResources().getDrawable(R.drawable.wrong_answer));
-                        feedbackLayout.setVisibility(View.VISIBLE);
                     } else if (selectAnswer.equals("C")) {
                         optionlayout3.setBackground(getResources().getDrawable(R.drawable.wrong_answer));
-                        feedbackLayout.setVisibility(View.VISIBLE);
                     } else if (selectAnswer.equals("D")) {
                         optionLayout4.setBackground(getResources().getDrawable(R.drawable.wrong_answer));
-                        feedbackLayout.setVisibility(View.VISIBLE);
                     }
                     Log.e("question number", question_number + "");
+                    feedbackLayout.setVisibility(View.VISIBLE);
                     jsonArray.put(selectAnswer);
                     if (question_number == 8) {
                         Toast.makeText(context, "Task completed, report has been submitted.", Toast.LENGTH_SHORT).show();

@@ -27,9 +27,6 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".login.LoginActivity"
-            android:exported="false" />
-        <activity
             android:name=".splash.SplashScreen"
             android:exported="true">
             <intent-filter>
