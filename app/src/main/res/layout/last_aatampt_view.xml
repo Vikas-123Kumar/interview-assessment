@@ -9,21 +9,21 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:padding="8dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/rectangular_edit"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="8dp">
 
 
         <TextView
             android:id="@+id/subject_name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
+            android:gravity="center"
             android:text="Subject: EVS"
             android:textSize="17sp"
-            android:textStyle="bold"
-            android:drawableRight="@drawable/baseline_arrow_forward_24">
+            android:textStyle="bold">
 
         </TextView>
 

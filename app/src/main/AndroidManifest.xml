@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Interview_task"
         tools:targetApi="31">
         <activity
+            android:name=".LastAttamptRecord"
+            android:exported="false" />
+        <activity
             android:name=".ShowReport"
             android:exported="false" />
         <activity

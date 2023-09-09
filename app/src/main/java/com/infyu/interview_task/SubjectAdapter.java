@@ -42,7 +42,7 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.MyViewho
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, QuestionActivity.class));
+                context.startActivity(new Intent(context, QuestionActivity.class).putExtra("subjectName", arrayList.get(position).getName()));
             }
         });
     }
